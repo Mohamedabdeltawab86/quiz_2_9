@@ -32,12 +32,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Map<int, int> selectedAnswers = {};
   Map<int, int> wrongAnswers = {};
 
-  void answeredQuestion(int index, int answerIndex) {
-    selectedAnswers[index] = answerIndex;
+  void answeredQuestion(int score, int correctedAnswer) {
+    selectedAnswers[index] = correctedAnswer;
     if (selectedAnswers[index] == questionList[index].answerIndex) {
       totalScore++;
     } else if (selectedAnswers[index] != questionList[index].answerIndex) {
-      wrongAnswers[index] = answerIndex;
+      wrongAnswers[index] = correctedAnswer;
     }
     print(wrongAnswers);
     // print(wrongAnswerList);
